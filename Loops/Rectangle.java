@@ -1,39 +1,59 @@
 package Loops;
 
 public class Rectangle {
-    class recta{
-     
-        private double lenghth;
-        private double witdh ;
-  
-    // setters 
-    public void setWidh(int x ){
-        lenghth=x;
-    }
-    public void setLenght(int y){
-        witdh=y;
-    }
-    //getters
-    double getWidh(){return lenghth;}
-    double getLength(){return witdh;}
-    // Calculations 
-    double peri =2*(getLength()+getWidh());
-    double Area = getLength()*getWidh();
+    class Recta {
 
-    //Displays
-    void Displays (){
-        System.err.println(getLength());
-        System.out.println(getWidh());
-        System.out.println(peri);
-        System.out.println(Area);
+        private double length;
+        private double width;
+
+        // Setters
+        public void setWidth(double x) {
+            width = x;
+        }
+
+        public void setLength(double y) {
+            length = y;
+        }
+
+        // Getters
+        double getWidth() {
+            return width;
+        }
+
+        double getLength() {
+            return length;
+        }
+
+        // Calculations
+        double calculatePerimeter() {
+            return 2 * (getLength() + getWidth());
+        }
+
+        double calculateArea() {
+            return getLength() * getWidth();
+        }
+
+        // Displays
+        void display() {
+            System.out.println("Length: " + getLength());
+            System.out.println("Width: " + getWidth());
+            System.out.println("Perimeter: " + calculatePerimeter());
+            System.out.println("Area: " + calculateArea());
+        }
     }
-    }
-    
+
     public static void main(String[] args) {
-        recta obj=new recta();
-        //obj.Displays();
-        obj.setLenght(7);
-        obj.setWidh(8);
-        obj.Displays();
+        // Create an instance of the outer class
+        Rectangle outer = new Rectangle();
+
+        // Create an instance of the inner class
+        Recta obj = outer.new Recta();
+
+        // Set values
+        obj.setLength(7);
+        obj.setWidth(8);
+
+        // Display results
+        obj.display();
     }
 }
